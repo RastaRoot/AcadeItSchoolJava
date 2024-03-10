@@ -3,9 +3,9 @@ package Lesson6;
 import java.util.Scanner;
 
 public class PrintAndRead {
-    public static int printAndRead(String inputsPrompt) {
+    public static int printAndRead(String inputPrompt) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println(inputsPrompt);
+        System.out.println(inputPrompt);
 
         return scanner.nextInt();
     }
