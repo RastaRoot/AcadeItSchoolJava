@@ -4,11 +4,11 @@ public class MaxSubstring {
     public static int getMaxSubstringLength(String line) {
         int maxSubstringLength = 0;
         int substringLength = 1;
-        String caseEdit = line.toUpperCase();
 
-        for (int i = 1; i < caseEdit.length(); ++i) {
+        String convertLineToUpperCase = line.toUpperCase();
 
-            if (caseEdit.charAt(i) == caseEdit.charAt(i - 1)) {
+        for (int i = 1; i < convertLineToUpperCase.length(); ++i) {
+            if (convertLineToUpperCase.charAt(i) == convertLineToUpperCase.charAt(i - 1)) {
                 ++substringLength;
 
                 if (substringLength > maxSubstringLength) {
@@ -19,11 +19,14 @@ public class MaxSubstring {
             }
         }
 
+        if (substringLength > maxSubstringLength) {
+            maxSubstringLength = substringLength;
+        }
+
         return maxSubstringLength;
     }
-    public static void main(String[] args) {
-        int symbolsCount = getMaxSubstringLength("hghghghytytytRRrrrrrRlkhhjh");
-        System.out.println(symbolsCount);
 
+    public static void main(String[] args) {
+        System.out.println(getMaxSubstringLength("hghghghytytytRRrrrrrRlkhhjh"));
     }
 }
