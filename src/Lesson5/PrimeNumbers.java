@@ -8,14 +8,13 @@ public class PrimeNumbers {
 
         System.out.println("Введите целое число:");
         int number = scanner.nextInt();
-        double sqrtNumber = Math.sqrt(number);
 
         System.out.print("Все простые числа, не превышающие введенное число: ");
 
         for (int i = 2; i <= number; i++) {
             boolean isPrime = true;
 
-            for (int j = 2; j <= sqrtNumber; j++) {
+            for (int j = 2; j < i; j++) {
                 if (i % j == 0) {
                     isPrime = false;
                     break;
