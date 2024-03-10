@@ -23,7 +23,7 @@ public class QuadraticEquation {
             if (Math.abs(discriminant) < epsilon) {
                 double x = -b / (2 * a);
                 System.out.println("Один корень, x = " + x);
-            } else if (discriminant > epsilon) {
+            } else if (discriminant >= epsilon) {
                 double x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
                 double x2 = (-b - Math.sqrt(discriminant)) / (2 * a);
                 System.out.println("Два корня, x1 = " + x1 + " x2 = " + x2);
