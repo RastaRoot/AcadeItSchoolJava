@@ -1,28 +1,31 @@
 package Lesson6;
 
 public class OrderCost {
-    public static double getOrderCost(int productAmount1, double productPrice1,
-                                      int productAmount2, double productPrice2) {
-        double orderPrice = productAmount1 * productPrice1 + productAmount2 * productPrice2;
-        int productsAmount = productAmount1 + productAmount2;
-        double orderCost;
-        final double sell10 = 0.9;
-        final double sell5 = 0.95;
-        final int productsAmount10 = 10;
-        final int orderPrice1000 = 1000;
+    public static double getOrderCost(int product1Amount, double product1Price,
+                                      int product2Amount, double product2Price) {
+        double totalPrice = product1Amount * product1Price + product2Amount * product2Price;
+        int productsAmount = product1Amount + product2Amount;
 
-        if (productsAmount >= productsAmount10 && orderPrice >= orderPrice1000) {
-            orderCost = orderPrice * sell10;
-        } else if (productsAmount >= productsAmount10 || orderPrice >= orderPrice1000) {
-            orderCost = orderPrice * sell5;
+        final double discountRate1 = 0.9;
+        final double discountRate2 = 0.95;
+
+        final int discountQuantityThreshold = 10;
+        final int discountPriceThreshold = 1000;
+
+        double finalCost;
+
+        if (productsAmount >= discountQuantityThreshold && totalPrice >= discountPriceThreshold) {
+            finalCost = totalPrice * discountRate1;
+        } else if (productsAmount >= discountQuantityThreshold || totalPrice >= discountPriceThreshold) {
+            finalCost = totalPrice * discountRate2;
         } else {
-            orderCost = orderPrice;
+            finalCost = totalPrice;
         }
-        return orderCost;
+
+        return finalCost;
     }
 
     public static void main(String[] args) {
-
         System.out.println(getOrderCost(5, 80, 5, 20));
     }
 } 
