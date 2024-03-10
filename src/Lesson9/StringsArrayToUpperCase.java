@@ -1,7 +1,7 @@
 package Lesson9;
 
 public class StringsArrayToUpperCase {
-    public static void upperCase(String[] array) {
+    public static void convertToUpperCase(String[] array) {
         for (int i = 0; i < array.length; i++) {
             array[i] = array[i].toUpperCase();
         }
@@ -9,7 +9,7 @@ public class StringsArrayToUpperCase {
 
     public static void main(String[] args) {
         String[] array = {"hello, ", "I'm Johnthreevolt"};
-        upperCase(array);
+        convertToUpperCase(array);
 
         for (String string : array) {
             System.out.print(string + " ");
