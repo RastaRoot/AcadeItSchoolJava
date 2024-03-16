@@ -1,7 +1,7 @@
 package Lesson9;
 
 public class SearchForElement {
-    public static int getArrayElement(int[] array, int number) {
+    public static int getElementIndex(int[] array, int number) {
         for (int i = 0; i < array.length; i++) {
             if (array[i] == number) {
                 return i;
@@ -13,6 +13,6 @@ public class SearchForElement {
 
     public static void main(String[] args) {
         int[] array = {9, 8, 7, 6, 5};
-        System.out.println(getArrayElement(array, 7));
+        System.out.println(getElementIndex(array, 7));
     }
 }
