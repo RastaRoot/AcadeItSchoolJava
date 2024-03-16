@@ -2,17 +2,13 @@ package Courseworks;
 
 public class MaxSubstring {
     public static int getMaxSubstringLength(String line) {
-        if (line.isEmpty()) {
-            return 0;
-        }
-
         int maxSubstringLength = 0;
         int substringLength = 1;
+        String caseEdit = line.toUpperCase();
 
-        String lineInUpperCase = line.toUpperCase();
+        for (int i = 1; i < caseEdit.length(); ++i) {
 
-        for (int i = 1; i < lineInUpperCase.length(); ++i) {
-            if (lineInUpperCase.charAt(i) == lineInUpperCase.charAt(i - 1)) {
+            if (caseEdit.charAt(i) == caseEdit.charAt(i - 1)) {
                 ++substringLength;
 
                 if (substringLength > maxSubstringLength) {
@@ -23,14 +19,11 @@ public class MaxSubstring {
             }
         }
 
-        if (substringLength > maxSubstringLength) {
-            maxSubstringLength = substringLength;
-        }
-
         return maxSubstringLength;
     }
-
     public static void main(String[] args) {
-        System.out.println(getMaxSubstringLength("jhjhjhuuuuuuuyvghfhf"));
+        int symbolsCount = getMaxSubstringLength("hghghghytytytRRrrrrrRlkhhjh");
+        System.out.println(symbolsCount);
+
     }
 }
