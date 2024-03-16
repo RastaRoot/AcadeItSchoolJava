@@ -6,27 +6,32 @@ public class Palindrome {
         int right = line.length() - 1;
 
         while (left < right) {
-            if (Character.isLetter(line.charAt(left)) && Character.isLetter(line.charAt(right))) {
-                if (Character.toLowerCase(line.charAt(left)) != Character.toLowerCase(line.charAt(right))) {
-                    return false;
-                }
+            char leftChar = line.charAt(left);
+            char rightChar = line.charAt(right);
+
+            if (!Character.isLetter(leftChar)) {
                 left++;
-                right--;
-            } else {
-                if (!Character.isLetter(line.charAt(left))) {
-                    left++;
-                }
-                if (!Character.isLetter(line.charAt(right))) {
-                    right--;
-                }
+                continue;
             }
+
+            if (!Character.isLetter(rightChar)) {
+                right--;
+                continue;
+            }
+
+            if (Character.toLowerCase(leftChar) != Character.toLowerCase(rightChar)) {
+                return false;
+            }
+
+            left++;
+            right--;
         }
 
         return true;
     }
 
     public static void main(String[] args) {
-        String str = "Аргентина манит негра";
-        System.out.println(isPalindrome(str));
+        String line = "Аргентина манит негра";
+        System.out.println(isPalindrome(line));
     }
 }
