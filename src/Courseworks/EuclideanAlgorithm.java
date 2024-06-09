@@ -21,8 +21,8 @@ public class EuclideanAlgorithm {
                 number1 = temp;
             }
 
-            int greatestCommonDivider = number1;
-            System.out.println("Наибольший общий делитель = " + greatestCommonDivider);
+            int greatestCommonDivisor = number1;
+            System.out.println("Наибольший общий делитель = " + greatestCommonDivisor);
         }
     }
 }
