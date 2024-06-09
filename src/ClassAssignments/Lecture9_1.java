@@ -8,8 +8,8 @@ public class Lecture9_1 {
             array[i] = i + 1;
         }
 
-        for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
+        for (int e : array) {
+            System.out.println(e);
         }
     }
 }
