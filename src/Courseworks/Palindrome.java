@@ -7,12 +7,13 @@ public class Palindrome {
 
         while (left < right) {
             char leftChar = line.charAt(left);
-            char rightChar = line.charAt(right);
 
             if (!Character.isLetter(leftChar)) {
                 left++;
                 continue;
             }
+
+            char rightChar = line.charAt(right);
 
             if (!Character.isLetter(rightChar)) {
                 right--;
