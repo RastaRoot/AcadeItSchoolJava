@@ -9,14 +9,14 @@ public class OrderCost {
         final double maxDiscountRate = 0.9;
         final double partialDiscountRate = 0.95;
 
-        final int discountQuantityThreshold = 10;
-        final int discountPriceThreshold = 1000;
+        final int discountAmountThreshold = 10;
+        final int discountCostThreshold = 1000;
 
         double finalCost;
 
-        if (productsAmount >= discountQuantityThreshold && fullCost >= discountPriceThreshold) {
+        if (productsAmount >= discountAmountThreshold && fullCost >= discountCostThreshold) {
             finalCost = fullCost * maxDiscountRate;
-        } else if (productsAmount >= discountQuantityThreshold || fullCost >= discountPriceThreshold) {
+        } else if (productsAmount >= discountAmountThreshold || fullCost >= discountCostThreshold) {
             finalCost = fullCost * partialDiscountRate;
         } else {
             finalCost = fullCost;
